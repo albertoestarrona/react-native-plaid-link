@@ -83,7 +83,11 @@ class PlaidAuthenticator extends Component {
       }
     */
 
-    this.props.onMessage(JSON.parse(e.nativeEvent.data));
+    try {
+      this.props.onMessage(JSON.parse(e.nativeEvent.data));
+    } catch (e) {
+      console.log(e);
+    }
   };
 }
 
